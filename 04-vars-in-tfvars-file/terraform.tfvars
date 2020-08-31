@@ -1,1 +1,1 @@
-bucket-name=my-varsfile-test-bukcet1
+bucket-name="my-varsfile-test-bukcet1"
