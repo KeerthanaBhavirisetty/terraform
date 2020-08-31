@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "b" {
-  bucket = "${}"
+  bucket = "${var.bucket-name}"
   acl    = "private"
 
   tags = {
