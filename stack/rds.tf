@@ -9,4 +9,5 @@ resource "aws_db_instance" "default" {
   password             = "foobarbaz"
   parameter_group_name = "default.mariadb10.4"
   skip_final_snapshot  = true
+  identifier           = "studentapp-db"
 }
