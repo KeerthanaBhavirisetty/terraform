@@ -8,4 +8,5 @@ resource "aws_db_instance" "default" {
   username             = "foo"
   password             = "foobarbaz"
   parameter_group_name = "default.mariadb10.4"
+  skip_final_snapshot  = true
 }
