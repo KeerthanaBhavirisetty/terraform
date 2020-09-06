@@ -6,6 +6,6 @@ resource "aws_instance" "node" {
   subnet_id     = sort(data.subnet_ids.subnets.ids)[count.index]
 
   tags = {
-    Name = "Instance1"
+    Name = "Instance-"count.index""
   }
 }
