@@ -1,6 +1,6 @@
 resource "aws_elb" "bar" {
   name               = "studentapp-elb"
-  availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
+  availability_zones = data.aws_availability_zones.available.names[0]
 
   access_logs {
     bucket        = "foo"
