@@ -2,9 +2,7 @@ resource "aws_elb" "bar" {
   name               = "studentapp-elb"
   availability_zones = data.aws_availability_zones.available.names
 
-  
-
-  listener {
+ listener {
     instance_port     = 8000
     instance_protocol = "http"
     lb_port           = 80
