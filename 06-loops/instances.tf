@@ -5,6 +5,6 @@ resource "aws_instance" "node" {
   key_name      = "key_28042020"
 
   tags = {
-    Name = "Instance-${count.index}"
+    Name = "Instance-${count.index + 1}"
   }
 }
