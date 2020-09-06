@@ -17,7 +17,7 @@ resource "aws_elb" "bar" {
     interval            = 30
   }
 
-  instances                   = [aws_instance.node.id]
+  instances                   = [aws_instance.node.*.id]
   cross_zone_load_balancing   = true
   idle_timeout                = 400
   connection_draining         = true
