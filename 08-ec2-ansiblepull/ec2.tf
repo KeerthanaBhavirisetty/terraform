@@ -10,6 +10,15 @@ resource "aws_instance" "node"{
 }
 
 resource "null_resource" "connect-to-ec2" {
+
+    connection {
+        type     = "ssh"
+        user     = "centos"
+        private_key = file("/opt/devops.pem")
+        
+        host     = "${var.host}"
+    }
+
     provisioner "remote-exec" {
       inline = [
           hostname       
