@@ -26,7 +26,7 @@ resource "null_resource" "connect-to-ec2" {
     provisioner "remote-exec" {
       inline = [
           "sudo yum install git ansible -y"       
-          ""
+          "sudo chmod 600 /home/centos/.ssh/id_rsa"
       ]
   }
    
