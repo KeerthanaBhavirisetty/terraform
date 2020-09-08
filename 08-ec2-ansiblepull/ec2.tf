@@ -14,14 +14,12 @@ resource "null_resource" "connect-to-ec2" {
     connection {
         type     = "ssh"
         user     = "centos"
-        private_key = file("/opt/devops.pem")
-        
-        host     = "${var.host}"
+        private_key = file("/opt/devops.pem")     
     }
 
     provisioner "remote-exec" {
       inline = [
-          hostname       
+          "hostname"       
       ]
   }
    
