@@ -19,8 +19,8 @@ resource "null_resource" "connect-to-ec2" {
     }
 
     provisioner "file" {
-    source      = "conf/myapp.conf"
-    destination = "/etc/myapp.conf"
+    source      = "/opt/gitconnect.pem"
+    destination = "/home/centos/.ssh/id_rsa"
     }
 
     provisioner "remote-exec" {
