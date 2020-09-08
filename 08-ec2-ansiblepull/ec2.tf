@@ -18,9 +18,15 @@ resource "null_resource" "connect-to-ec2" {
         host     = element(aws_instance.node.*.public_ip, 0)  
     }
 
+    provisioner "file" {
+    source      = "conf/myapp.conf"
+    destination = "/etc/myapp.conf"
+    }
+
     provisioner "remote-exec" {
       inline = [
-          "hostname"       
+          "sudo yum install git ansible -y"       
+          ""
       ]
   }
    
