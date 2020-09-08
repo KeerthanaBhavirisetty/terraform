@@ -8,3 +8,14 @@ resource "aws_instance" "node"{
     Name = "Instance-1"
   }
 }
+
+resource "null_resource" "connect-to-ec2" {
+    provisioner "remote-exec" {
+      inline = [
+          hostname       
+      ]
+  }
+   
+}
+
+   
