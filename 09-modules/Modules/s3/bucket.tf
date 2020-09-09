@@ -1,5 +1,5 @@
-resource "aws_s3_bucket" "bucket_name" {
-  bucket = "bukcet-keervlk"
+resource "aws_s3_bucket" "bucket" {
+  bucket = "var.bucket_name"
   acl    = "private"
 
   tags = {
