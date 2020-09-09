@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket_name" {
-  bucket = "my-test-bucket2"
+  bucket = "bukcet-keervlk"
   acl    = "private"
 
   tags = {
