@@ -1,1 +1,1 @@
-variable s3-bucket {}
+variable s3-arn {}
