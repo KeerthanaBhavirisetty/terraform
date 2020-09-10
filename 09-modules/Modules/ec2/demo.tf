@@ -1,6 +1,6 @@
 resource null_resource null1 {
 
   provisioner "local-exec" {
-    command = "echo ${var.s3-arn} >> private_ips.txt"
+    command = "echo BUCKET ARN IS ${var.s3-arn} "
   }
 }
