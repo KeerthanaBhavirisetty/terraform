@@ -5,5 +5,5 @@ module "s3" {
 
 module "ec2" {
   source = "./Modules/ec2"
-  s3_bucket = module.s3.s3-arn
+  s3-arn = module.s3.s3-arn
 }
