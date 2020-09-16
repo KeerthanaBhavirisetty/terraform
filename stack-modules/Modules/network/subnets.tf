@@ -44,7 +44,7 @@ resource "aws_route_table" "public-rt" {
 }
 
 resource "aws_route_table" "private-rt" {
-    vpc_id          = "${aws_vpc.studentapp-vpc.id}"
+    vpc_id          = aws_vpc.studentapp-vpc.id
 
   tags = {
         Name            = "Private-Route-Table-${var.PROJECT_NAME}-${var.PROJECT_ENV}"
