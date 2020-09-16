@@ -35,12 +35,10 @@ resource "aws_route_table" "public-rt" {
     gateway_id = aws_internet_gateway.gw.id
   }
 
-  route {
-    ipv6_cidr_block        = "::/0"
-    egress_only_gateway_id = aws_egress_only_internet_gateway.foo.id
-  }
-
   tags = {
-    Name = "main"
+     Name         = "Public-Route-Table-${var.PROJECT_NAME}-${var.PROJECT_ENV}"
+     PROJECT_NAME = var.PROJECT_NAME
+     ENVIRONMENT  = var.PROJECT_ENV
+     CREATED_BY   = "Terraform"
   }
 }
