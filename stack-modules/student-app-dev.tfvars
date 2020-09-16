@@ -1,3 +1,3 @@
 PROJECT_NAME = "Studentapp"
-PROJECT_ENV= "Dev"
-VPC_CIDR="10.0.0.0/21"
+PROJECT_ENV = "Dev"
+VPC_CIDR = "10.0.0.0/21"
