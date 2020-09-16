@@ -3,7 +3,7 @@ resource "aws_vpc" "studentapp-vpc" {
   instance_tenancy = "default"
 
   tags = {
-    Name = var.PROJECT_NAME-var.PROJECT_ENV-VPC
+    Name = "${var.PROJECT_NAME}-${var.PROJECT_ENV}-VPC"
     created_by = "Terraform"
   }
 }
