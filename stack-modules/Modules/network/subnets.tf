@@ -5,7 +5,7 @@ resource "aws_subnet" "public-subnets" {
     availability_zone = element(var.AZ,count.index)
 
   tags = {
-     Name = "public-subnet-${count.index}"
+     Name = "Public-Subnet-${count.index+1}"
      PROJECT_NAME = var.PROJECT_NAME
      ENVIRONMENT  = var.PROJECT_ENV
      CREATED_BY   = "Terraform"
@@ -19,7 +19,7 @@ resource "aws_subnet" "private-subnets" {
     availability_zone = element(var.AZ,count.index)
 
   tags = {
-     Name = "private-subnet-${count.index}"
+     Name = "Private-Subnet-${count.index+1}"
      PROJECT_NAME = var.PROJECT_NAME
      ENVIRONMENT  = var.PROJECT_ENV
      CREATED_BY   = "Terraform"
