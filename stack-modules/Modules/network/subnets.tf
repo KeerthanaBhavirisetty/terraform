@@ -1,7 +1,8 @@
 resource "aws_subnet" "main" {
-  vpc_id     = aws_vpc.studentapp-vpc.id
-  cidr_block = "10.0.1.0/24"
-  availability_zone = var.AZ[count]
+    count       = 4
+    vpc_id      = aws_vpc.studentapp-vpc.id
+    cidr_block  = cidrsubnet("10.0.0.0/21", 3, 2)
+    availability_zone = var.AZ[count]
 
   tags = {
     Name = "Main"
