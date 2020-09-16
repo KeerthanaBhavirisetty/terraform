@@ -59,3 +59,9 @@ resource "aws_route_table_association" "public-a" {
   subnet_id      = element(aws_subnet.public-subnets.*.id,count.index)
   route_table_id = aws_route_table.public-rt.id
 }
+
+resource "aws_route_table_association" "private-a" {
+  count          = 4
+  subnet_id      = element(aws_subnet.private-subnets.*.id,count.index)
+  route_table_id = aws_route_table.private-rt.id
+}
