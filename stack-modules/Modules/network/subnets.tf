@@ -8,7 +8,7 @@ resource "aws_subnet" "public-subnets" {
      Name = "public-subnet-${count.index}"
      PROJECT_NAME = var.PROJECT_NAME
      ENVIRONMENT  = var.PROJECT_ENV
-     CREATED_BY   = Terraform
+     CREATED_BY   = "Terraform"
   }
 }
 
@@ -22,6 +22,6 @@ resource "aws_subnet" "private-subnets" {
      Name = "private-subnet-${count.index}"
      PROJECT_NAME = var.PROJECT_NAME
      ENVIRONMENT  = var.PROJECT_ENV
-     CREATED_BY   = Terraform
+     CREATED_BY   = "Terraform"
   }
 }
