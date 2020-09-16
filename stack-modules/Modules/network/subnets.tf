@@ -42,3 +42,20 @@ resource "aws_route_table" "public-rt" {
      CREATED_BY   = "Terraform"
   }
 }
+
+resource "aws_route_table" "private-rt" {
+    vpc_id          = "${aws_vpc.studentapp-vpc.id}"
+
+  tags = {
+        Name            = "Private-Route-Table-${var.PROJECT_NAME}-${var.PROJECT_ENV}"
+        PROJECT_NAME    = "${var.PROJECT_NAME}"
+        ENVIRONMENT     = "${var.PROJECT_ENV}"
+        Created_BY      = "Terraform"
+  }
+}
+
+resource "aws_route_table_association" "public-a" {
+  count          = 4
+  subnet_id      = element(aws_subnet.public-subnets.id,count.index)
+  route_table_id = aws_route_table.public-rt.id
+}
