@@ -4,5 +4,6 @@ resource "aws_vpc" "studentapp-vpc" {
 
   tags = {
     Name = var.PROJECT_NAME-var.PROJECT_ENV-VPC
+    created_by = "Terraform"
   }
 }
