@@ -5,7 +5,7 @@ resource "aws_subnet" "public-subnets" {
     availability_zone = element(var.AZ,count.index)
 
   tags = {
-    Name = "public-subnet"-count.index
+    Name = "${public-subnet-count.index}"
   }
 }
 
