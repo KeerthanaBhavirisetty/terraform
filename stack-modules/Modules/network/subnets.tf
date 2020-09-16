@@ -1,8 +1,9 @@
 resource "aws_subnet" "public-subnets" {
-    count       = 4
-    vpc_id      = aws_vpc.studentapp-vpc.id
-    cidr_block  = cidrsubnet(var.VPC_CIDR, 3, count.index)
-    availability_zone = element(var.AZ,count.index)
+    count                   = 4
+    vpc_id                  = aws_vpc.studentapp-vpc.id
+    cidr_block              = cidrsubnet(var.VPC_CIDR, 3, count.index)
+    availability_zone       = element(var.AZ,count.index)
+    map_public_ip_on_launch = true
 
   tags = {
      Name = "Public-Subnet-${count.index+1}"
