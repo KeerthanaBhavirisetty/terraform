@@ -1,6 +1,6 @@
 resource "aws_rds_cluster_parameter_group" "default" {
   name        = var.DB_ENGINE"_parameter_group"
-  family      = "aurora5.6"
+  family      = var.DB_ENGINEvar.DB_ENGINE_VERSION
   description = "RDS default cluster parameter group"
 
   parameter {
