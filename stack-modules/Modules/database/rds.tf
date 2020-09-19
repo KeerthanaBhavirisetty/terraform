@@ -6,8 +6,7 @@ resource "aws_rds_cluster_parameter_group" "default" {
 
 resource "aws_db_subnet_group" "default" {
   name       = "main"
-  subnet_ids = [aws_subnet.private-subnets.*.id, aws_subnet.backend.id]
-
+  subnet_ids = var.PRIVATE_SUBNETS
   tags = {
     Name = "My DB subnet group"
   }
@@ -22,7 +21,7 @@ resource "aws_db_instance" "default" {
   name                 = var.DB_NAME
   username             = var.DB_USER
   password             = var.DB_PASS
-  parameter_group_name = var.PRIVATE_SUBNETS
+  parameter_group_name = aws_rds_cluster_parameter_group.default.id
   skip_final_snapshot  = !var.NEED_FINAL_SNAPSHOT
   identifier           = "${var.DB_NAME}-db"
 }
