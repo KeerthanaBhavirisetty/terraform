@@ -12,7 +12,7 @@ resource "aws_db_parameter_group" "default" {
 
 resource "aws_db_subnet_group" "default" {
   name       = "main"
-  subnet_ids = [var.PRIVATE_SUBNETS]
+  subnet_ids = var.PRIVATE_SUBNETS
   tags = {
      Name         = "${var.PROJECT_NAME}-${var.PROJECT_ENV}-SubnetGroup"
      created_by   = "Terraform"
