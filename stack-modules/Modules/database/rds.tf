@@ -2,13 +2,22 @@
 resource "aws_db_parameter_group" "default" {
   name   = "${var.DB_ENGINE}-parameter-group"
   family = "${var.DB_ENGINE}${var.DB_ENGINE_VERSION}"
+  tags = {
+     Name         = "${var.PROJECT_NAME}-${var.PROJECT_ENV}-Parameter Group"
+     created_by   = "Terraform"
+     PROJECT_NAME = var.PROJECT_NAME
+     ENVIRONMENT  = var.PROJECT_ENV
+  }
 }
 
 resource "aws_db_subnet_group" "default" {
   name       = "main"
   subnet_ids = [var.PRIVATE_SUBNETS]
   tags = {
-    Name = "My DB subnet group"
+     Name         = "${var.PROJECT_NAME}-${var.PROJECT_ENV}-SubnetGroup"
+     created_by   = "Terraform"
+     PROJECT_NAME = var.PROJECT_NAME
+     ENVIRONMENT  = var.PROJECT_ENV
   }
 }
 
