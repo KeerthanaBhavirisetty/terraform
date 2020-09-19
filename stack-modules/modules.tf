@@ -7,7 +7,7 @@ module "network" {
 }
 
 module "database" {
-  source = "./Modules/network"
+  source = "./Modules/database"
   PROJECT_NAME         = var.PROJECT_NAME
   PROJECT_ENV          = var.PROJECT_ENV
   VPC_CIDR             = var.VPC_CIDR
