@@ -1,8 +1,3 @@
-resource "aws_rds_cluster_parameter_group" "default" {
-  name        = "${var.DB_ENGINE}-parameter-group"
-  family      = "mariadb10.3"
-  description = "RDS ${var.DB_ENGINE} cluster parameter group"
-}
 
 resource "aws_db_parameter_group" "default" {
   name   = "${var.DB_ENGINE}-parameter-group"
