@@ -25,5 +25,5 @@ resource "aws_db_instance" "default" {
   password             = var.DB_PASS
   parameter_group_name = "default.mariadb10.4"
   skip_final_snapshot  = var.NEED_FINAL_SNAPSHOT
-  identifier           = var.DB_NAME"-db"
+  identifier           = "${var.DB_NAME}-db"
 }
