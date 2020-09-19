@@ -6,7 +6,7 @@ resource "aws_db_parameter_group" "default" {
 
 resource "aws_db_subnet_group" "default" {
   name       = "main"
-  subnet_ids = var.PRIVATE_SUBNETS
+  subnet_ids = [var.PRIVATE_SUBNETS]
   tags = {
     Name = "My DB subnet group"
   }
