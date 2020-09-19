@@ -9,3 +9,5 @@ variable DB_INSTANCE {}
 variable PRIVATE_SUBNETS {
     type = list
 }
+variable PROJECT_NAME {}
+variable PROJECT_ENV {}
