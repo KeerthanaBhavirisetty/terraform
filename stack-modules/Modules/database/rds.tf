@@ -33,4 +33,10 @@ resource "aws_db_instance" "default" {
   parameter_group_name = aws_db_parameter_group.default.id
   skip_final_snapshot  = !var.NEED_FINAL_SNAPSHOT
   identifier           = "${var.DB_NAME}-db"
+  tags = {
+     Name         = "${var.PROJECT_NAME}-${var.PROJECT_ENV}-RDS instance"
+     created_by   = "Terraform"
+     PROJECT_NAME = var.PROJECT_NAME
+     ENVIRONMENT  = var.PROJECT_ENV
+  }
 }
