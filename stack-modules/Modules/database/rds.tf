@@ -1,7 +1,7 @@
 
 resource "aws_db_parameter_group" "default" {
   name   = "${var.DB_ENGINE}-parameter-group"
-  family = "mariadb10.4"
+  family = "${var.DB_ENGINE}${var.DB_ENGINE_VERSION}"
 }
 
 resource "aws_db_subnet_group" "default" {
