@@ -6,4 +6,6 @@ variable DB_USER {}
 variable DB_NAME {}
 variable DB_PASS {}
 variable DB_INSTANCE {}
-variable PRIVATE_SUBNETS {}
+variable PRIVATE_SUBNETS {
+    type = list
+}
