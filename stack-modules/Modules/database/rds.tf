@@ -21,7 +21,7 @@ resource "aws_db_instance" "default" {
   name                 = var.DB_NAME
   username             = var.DB_USER
   password             = var.DB_PASS
-  parameter_group_name = aws_rds_cluster_parameter_group.default.id
+  parameter_group_name = aws_db_parameter_group.default.id
   skip_final_snapshot  = !var.NEED_FINAL_SNAPSHOT
   identifier           = "${var.DB_NAME}-db"
 }
