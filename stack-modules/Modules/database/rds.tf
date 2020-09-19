@@ -2,16 +2,6 @@ resource "aws_rds_cluster_parameter_group" "default" {
   name        = "${var.DB_ENGINE}_parameter_group"
   family      = "${var.DB_ENGINE}${var.DB_ENGINE_VERSION}"
   description = "RDS default cluster parameter group"
-
-  parameter {
-    name  = "character_set_server"
-    value = "utf8"
-  }
-
-  parameter {
-    name  = "character_set_client"
-    value = "utf8"
-  }
 }
 
 resource "aws_db_instance" "default" {
