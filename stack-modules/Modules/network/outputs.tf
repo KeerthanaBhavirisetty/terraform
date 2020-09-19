@@ -1,5 +1,5 @@
 output "private-subnets"{
-    value=aws_subnet.private-subnets.id
+    value=aws_subnet.private-subnets.*.id
 }
 
 
