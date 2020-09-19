@@ -1,5 +1,5 @@
 resource "aws_rds_cluster_parameter_group" "default" {
-  name        = var.DB_ENGINE"_parameter_group"
+  name        = "${var.DB_ENGINE}_parameter_group"
   family      = format(%v,var.DB_ENGINE,var.DB_ENGINE_VERSION)
   description = "RDS default cluster parameter group"
 
