@@ -16,5 +16,5 @@ module "database" {
   DB_NAME              =  var.DB_NAME
   DB_PASS              =  var.DB_PASS
   DB_INSTANCE          =  var.DB_INSTANCE
-  private-subnets      = module.network.private-subnets
+  PRIVATE_SUBNETS      = module.network.private-subnets
 }
