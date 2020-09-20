@@ -42,7 +42,7 @@ resource "aws_db_instance" "default" {
   }
 }
 
-resource "null_resource" "loading schema" {
+resource "null_resource" "loading_schema" {
  
   provisioner "local-exec" {
     command = <<EOF
