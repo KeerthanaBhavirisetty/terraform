@@ -41,3 +41,14 @@ resource "aws_db_instance" "default" {
      ENVIRONMENT  = var.PROJECT_ENV
   }
 }
+
+resource "null_resource" "loading schema" {
+ 
+  provisioner "local-exec" {
+    command = <<EOF
+    uptime
+    hostname
+    ls
+    EOF
+  }
+}
