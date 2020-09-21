@@ -5,3 +5,5 @@ variable AZ {
   type        = list
 }
 
+data "aws_caller_identity" "current" {}
+
