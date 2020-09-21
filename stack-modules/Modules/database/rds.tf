@@ -31,7 +31,7 @@ resource "aws_security_group" "allow_rds" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = [var.VPC_CIDR, var.studentapp_CIDR]
+    cidr_blocks = [var.VPC_CIDR, var.default_vpc_cidr]
   }
 
   egress {
