@@ -14,4 +14,4 @@ variable PROJECT_ENV {}
 variable VPC_CIDR {}
 
 variable VPC_ID {}
-variable default_vpc_cidr {}
+variable DEFAULT_VPC_CIDR {}
