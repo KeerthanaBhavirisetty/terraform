@@ -57,10 +57,10 @@ resource "aws_db_instance" "default" {
   db_subnet_group_name        =   aws_db_subnet_group.default.id
   vpc_security_group_ids      =   aws_security_group.allow_rds.id
   tags = {
-     Name                     = "${var.PROJECT_NAME}-${var.PROJECT_ENV}-RDS instance"
-     created_by               = "Terraform"
-     PROJECT_NAME             = var.PROJECT_NAME
-     ENVIRONMENT              = var.PROJECT_ENV
+        Name                  = "${var.PROJECT_NAME}-${var.PROJECT_ENV}-RDS instance"
+        created_by            = "Terraform"
+        PROJECT_NAME          = var.PROJECT_NAME
+        ENVIRONMENT           = var.PROJECT_ENV
   }
 }
 
