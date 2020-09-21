@@ -7,7 +7,7 @@ variable AZ {
 
 data "aws_caller_identity" "current" {}
 
-data "aws_vpcs" "current" {
+data "aws_vpc" "current" {
   tags = {
     Name = "myapp-vpcs"
   }
