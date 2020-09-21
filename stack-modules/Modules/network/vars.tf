@@ -7,13 +7,10 @@ variable AZ {
 
 data "aws_caller_identity" "current" {}
 
-data "aws_vpcs" "foo" {
+data "aws_vpcs" "current" {
   tags = {
     Name = "default"
   }
 }
 
-output "foo" {
-  value = data.aws_vpcs.foo.ids
-}
 
