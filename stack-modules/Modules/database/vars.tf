@@ -14,3 +14,4 @@ variable PROJECT_ENV {}
 variable VPC_CIDR {}
 
 variable VPC_ID {}
+variable studentapp_CIDR {}
