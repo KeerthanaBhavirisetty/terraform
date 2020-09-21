@@ -37,7 +37,7 @@ resource "aws_route_table" "public-rt" {
 
   route {
     cidr_block = data.aws_vpc.current.cidr_block
-    gateway_id = aws_internet_gateway.gw.id
+    vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
   }
 
   tags = {
