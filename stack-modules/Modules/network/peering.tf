@@ -6,5 +6,6 @@ resource "aws_vpc_peering_connection" "peer" {
 
   tags = {
     Side = "Requester"
+    Name = "Peering connetion between default and created VPC"
   }
 }
