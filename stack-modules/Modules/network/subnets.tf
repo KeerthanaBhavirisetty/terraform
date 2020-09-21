@@ -51,6 +51,11 @@ resource "aws_route_table" "public-rt" {
 resource "aws_route_table" "private-rt" {
     vpc_id          = aws_vpc.studentapp-vpc.id
 
+    route {
+      cidr_block = data.aws_vpc.current.cidr_block
+      vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
+    }
+
   tags = {
         Name            = "Private-Route-Table-${var.PROJECT_NAME}-${var.PROJECT_ENV}"
         PROJECT_NAME    = "${var.PROJECT_NAME}"
