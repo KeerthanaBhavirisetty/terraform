@@ -21,4 +21,5 @@ module "database" {
   PROJECT_ENV          = var.PROJECT_ENV
   VPC_CIDR             = var.VPC_CIDR
   VPC_ID               = module.network.studentapp_vpcid
+  studentapp_CIDR      = module.network.studentapp_CIDR
 }
