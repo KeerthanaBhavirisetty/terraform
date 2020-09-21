@@ -68,7 +68,7 @@ resource "null_resource" "loading_schema" {
  
   provisioner "local-exec" {
     command = <<EOF
-     mysql -h ${aws_db_instance.default.address} -u ${var.DB_USER} -p ${var.DBPASS} < Modules/database/schema.sql
+     mysql -h ${aws_db_instance.default.address} -u ${var.DB_USER} -p ${var.DB_PASS} < Modules/database/schema.sql
     EOF
   }
 }
