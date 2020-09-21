@@ -19,5 +19,5 @@ module "database" {
   PRIVATE_SUBNETS      = module.network.private-subnets
   PROJECT_NAME         = var.PROJECT_NAME
   PROJECT_ENV          = var.PROJECT_ENV
-  VPC_CIDR             = module.network.studentapp_vpcid
+  VPC_ID             = module.network.studentapp_vpcid
 }
