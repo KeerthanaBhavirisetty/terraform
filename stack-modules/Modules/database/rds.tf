@@ -24,7 +24,7 @@ resource "aws_db_subnet_group" "default" {
 resource "aws_security_group" "allow_rds" {
   name        = "mariadb_rds"
   description = "Allow RDS inbound traffic"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = aws_vpc.current.id
 
   ingress {
     description = "TLS from VPC"
