@@ -35,6 +35,11 @@ resource "aws_route_table" "public-rt" {
     gateway_id = aws_internet_gateway.gw.id
   }
 
+  route {
+    cidr_block = data.aws_vpc.current.cidr_block
+    gateway_id = aws_internet_gateway.gw.id
+  }
+
   tags = {
      Name         = "Public-Route-Table-${var.PROJECT_NAME}-${var.PROJECT_ENV}"
      PROJECT_NAME = var.PROJECT_NAME
