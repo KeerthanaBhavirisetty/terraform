@@ -21,5 +21,5 @@ module "database" {
   PROJECT_ENV          = var.PROJECT_ENV
   VPC_CIDR             = var.VPC_CIDR
   VPC_ID               = module.network.studentapp_vpcid
-  default_vpc_cidr     = module.network.default_vpc_cidr
+  DEFAULT_VPC_CIDR     = module.network.default_vpc_cidr
 }
