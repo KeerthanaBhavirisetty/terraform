@@ -28,8 +28,8 @@ resource "aws_security_group" "allow_rds" {
 
   ingress {
     description = "RDS from VPC"
-    from_port   = 443
-    to_port     = 443
+    from_port   = 3306
+    to_port     = 3306
     protocol    = "tcp"
     cidr_blocks = [var.VPC_CIDR, var.DEFAULT_VPC_CIDR]
   }
