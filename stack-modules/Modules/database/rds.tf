@@ -34,15 +34,8 @@ resource "aws_security_group" "allow_rds" {
     cidr_blocks = [var.VPC_CIDR, var.DEFAULT_VPC_CIDR]
   }
 
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
   tags = {
-    Name = "allow_tls"
+    Name = "allow_rds"
   }
 }
 
