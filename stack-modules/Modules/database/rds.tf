@@ -27,7 +27,7 @@ resource "aws_security_group" "allow_rds" {
   vpc_id      = var.VPC_ID
 
   ingress {
-    description = "TLS from VPC"
+    description = "RDS from VPC"
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
