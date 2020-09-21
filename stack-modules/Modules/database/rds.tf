@@ -68,9 +68,7 @@ resource "null_resource" "loading_schema" {
  
   provisioner "local-exec" {
     command = <<EOF
-    uptime
-    hostname
-    ls
+     mysql -h aws_db_instance.default.endpoint
     EOF
   }
 }
