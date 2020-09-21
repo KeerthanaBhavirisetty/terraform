@@ -3,7 +3,7 @@ output "private-subnets"{
 }
 
 output "studentapp_vpcid"{
-    value=aws_vpc.studentapp_vpcid.id
+    value=aws_vpc.studentapp-vpc.id
 }
 
 
