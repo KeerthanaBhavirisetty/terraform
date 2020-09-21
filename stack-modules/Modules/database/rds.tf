@@ -55,7 +55,7 @@ resource "aws_db_instance" "default" {
   skip_final_snapshot  = !var.NEED_FINAL_SNAPSHOT
   identifier           = "${var.DB_NAME}-db"
   db_subnet_group_name = aws_db_subnet_group.default.id
-  security_group_names = aws_security_group.allow_rds.id
+  vpc_security_group_ids  = aws_security_group.allow_rds.id
   tags = {
      Name         = "${var.PROJECT_NAME}-${var.PROJECT_ENV}-RDS instance"
      created_by   = "Terraform"
