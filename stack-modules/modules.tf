@@ -17,6 +17,7 @@ module "database" {
   DB_PASS              =  var.DB_PASS
   DB_INSTANCE          =  var.DB_INSTANCE
   PRIVATE_SUBNETS      = module.network.private-subnets
-  PROJECT_NAME  = var.PROJECT_NAME
-  PROJECT_ENV   = var.PROJECT_ENV
+  PROJECT_NAME         = var.PROJECT_NAME
+  PROJECT_ENV          = var.PROJECT_ENV
+  VPC_CIDR             = module.network.studentapp_vpcid
 }
