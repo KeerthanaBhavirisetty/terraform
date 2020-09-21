@@ -9,7 +9,7 @@ data "aws_caller_identity" "current" {}
 
 data "aws_vpcs" "current" {
   tags = {
-    Name = "default"
+    Name = "myapp-vpcs"
   }
 }
 
