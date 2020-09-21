@@ -35,7 +35,10 @@ resource "aws_security_group" "allow_rds" {
   }
 
   tags = {
-    Name = "allow_rds"
+     Name         = "${var.PROJECT_NAME}-${var.PROJECT_ENV}-SecurityGroup"
+     created_by   = "Terraform"
+     PROJECT_NAME = var.PROJECT_NAME
+     ENVIRONMENT  = var.PROJECT_ENV
   }
 }
 
