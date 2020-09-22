@@ -5,6 +5,7 @@ variable AZ {
     type = list
 }
 
+#DATABASE PARAMETERS
 variable DB_SIZE {}
 variable DB_ENGINE {}
 variable DB_ENGINE_VERSION {}
@@ -13,3 +14,5 @@ variable DB_USER {}
 variable DB_NAME {}
 variable DB_PASS {}
 variable DB_INSTANCE {}
+
+#INFRA PARAMETERS
