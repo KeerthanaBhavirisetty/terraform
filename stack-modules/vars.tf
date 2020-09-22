@@ -16,3 +16,6 @@ variable DB_PASS {}
 variable DB_INSTANCE {}
 
 #INFRA PARAMETERS
+variable INSTANCE_TYPE {}
+variable INSTANCE_COUNT {}
+variable KEYPAIR_NAME {}
