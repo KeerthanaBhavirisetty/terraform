@@ -7,7 +7,7 @@ module "network" {
 }
 
 module "database" {
-  source = "./Modules/database"
+  source               = "./Modules/database"
   DB_SIZE              =  var.DB_SIZE
   DB_ENGINE            =  var.DB_ENGINE
   DB_ENGINE_VERSION    =  var.DB_ENGINE_VERSION
@@ -25,6 +25,9 @@ module "database" {
 }
 
 module "infra" {
-  source = ".Modules/infrastructure"
-  
+  source               = ".Modules/infrastructure"
+  DB_SIZE              =  var.DB_SIZE
+  DB_ENGINE            =  var.DB_ENGINE
+  DB_ENGINE_VERSION    =  var.DB_ENGINE_VERSION
+
 }
