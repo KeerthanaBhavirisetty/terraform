@@ -10,4 +10,7 @@ output "default_vpc_cidr" {
     value=data.aws_vpc.current.cidr_block
 }
 
+output "public-subnets"{
+    value=aws_subnet.public-subnets.*.id
+}
 
