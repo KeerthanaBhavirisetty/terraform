@@ -33,7 +33,6 @@ module "infra" {
   INSTANCE_COUNT        = var.INSTANCE_COUNT
   KEYPAIR_NAME          = var.KEYPAIR_NAME
   PUBLIC_SUBNETS        = module.network.public-subnets
-  VPC_CIDR              = var.VPC_CIDR
   VPC_ID                = module.network.studentapp_vpcid
   DEFAULT_VPC_CIDR      = module.network.default_vpc_cidr
 
