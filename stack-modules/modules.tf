@@ -29,6 +29,8 @@ module "infra" {
   PROJECT_NAME          = var.PROJECT_NAME
   PROJECT_ENV           = var.PROJECT_ENV
   VPC_CIDR              = var.VPC_CIDR
-
+  INSTANCE_TYPE         = var.INSTANCE_TYPE
+  INSTANCE_COUNT        = var.INSTANCE_COUNT
+  KEYPAIR_NAME          = var.KEYPAIR_NAME
 
 }
