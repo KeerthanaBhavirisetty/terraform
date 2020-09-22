@@ -18,3 +18,6 @@ data "aws_ami" "myami" {
 variable INSTANCE_TYPE {}
 variable INSTANCE_COUNT {}
 variable KEYPAIR_NAME {}
+variable PUBLIC_SUBNETS{
+    type = list
+}
