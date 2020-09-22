@@ -6,6 +6,9 @@ resource "aws_instance" "web" {
     subnet_id       = element(var.PUBLIC_SUBNETS,count.index)
 
     tags = {
-      Name = "HelloWorld"
+        Name         = "${var.PROJECT_NAME}-${var.PROJECT_ENV}-VPC"
+        created_by   = "Terraform"
+        PROJECT_NAME = var.PROJECT_NAME
+        ENVIRONMENT  = var.PROJECT_ENV
     }
 }
