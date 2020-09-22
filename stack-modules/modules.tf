@@ -32,5 +32,6 @@ module "infra" {
   INSTANCE_TYPE         = var.INSTANCE_TYPE
   INSTANCE_COUNT        = var.INSTANCE_COUNT
   KEYPAIR_NAME          = var.KEYPAIR_NAME
+  PUBLIC_SUBNETS       = module.network.public-subnets
 
 }
