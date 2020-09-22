@@ -14,3 +14,7 @@ data "aws_ami" "myami" {
 
   owners = [data.aws_caller_identity.current.account_id] # Canonical
 }
+
+variable INSTANCE_TYPE {}
+variable INSTANCE_COUNT {}
+variable KEYPAIR_NAME {}
