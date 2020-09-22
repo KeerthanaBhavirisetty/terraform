@@ -23,3 +23,8 @@ module "database" {
   VPC_ID               = module.network.studentapp_vpcid
   DEFAULT_VPC_CIDR     = module.network.default_vpc_cidr
 }
+
+module "infra" {
+  source = ".Modules/infrastructure"
+  
+}
