@@ -4,7 +4,7 @@ variable VPC_CIDR {}
 
 data "aws_caller_identity" "current" {}
 
-data "aws_ami" "ubuntu" {
+data "aws_ami" "myami" {
   most_recent = true
 
   filter {
