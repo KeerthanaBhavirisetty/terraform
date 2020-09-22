@@ -13,3 +13,9 @@ DB_USER             = "student"
 DB_NAME             = "studentapp"
 DB_PASS             = "student1"
 DB_INSTANCE         = "db.t2.micro"
+
+#INFRA PARAMETERS
+
+INSTANCE_TYPE       = "t2.micro"
+INSTANCE_COUNT      = 1
+KEYPAIR_NAME        = "key_28042020"
