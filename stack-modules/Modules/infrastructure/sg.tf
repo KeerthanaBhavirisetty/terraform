@@ -15,7 +15,7 @@ resource "aws_security_group" "allow_ec2" {
     to_port         = 80
     protocol        = "TCP"
     description     = "Application open to outside world"
-    cidr_blocks     = [var.VPC_CIDR, var.DEFAULT_VPC_CIDR]
+    cidr_blocks     = ["0.0.0.0/0",var.VPC_CIDR, var.DEFAULT_VPC_CIDR]
   }
 
   tags = {
