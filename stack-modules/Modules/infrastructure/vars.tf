@@ -21,3 +21,8 @@ variable KEYPAIR_NAME {}
 variable PUBLIC_SUBNETS{
     type = list
 }
+
+variable VPC_CIDR {}
+
+variable VPC_ID {}
+variable DEFAULT_VPC_CIDR {}
