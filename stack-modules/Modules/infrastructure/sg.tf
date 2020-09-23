@@ -18,6 +18,13 @@ resource "aws_security_group" "allow_ec2" {
     cidr_blocks     = ["0.0.0.0/0",var.VPC_CIDR, var.DEFAULT_VPC_CIDR]
   }
 
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   tags = {
      Name                     = "${var.PROJECT_NAME}-${var.PROJECT_ENV}-EC2-SecurityGroup"
      created_by               = "Terraform"
