@@ -33,8 +33,7 @@ resource "null_resource" "connect-to-ec2" {
       inline = [
           "sudo yum install git ansible -y",     
           "sudo chmod 600 /home/centos/.ssh/id_rsa",
-          "ansible-pull --accept-host-key -U git@github.com:KeerthanaBhavirisetty/ansible-pull.git setup.yml 
-          -e DBUSER=${var.DB_USER} -e DBPASS=${var.DB_PASS} -e DBHOST=${var.DB_HOST} -e DBNAME=${var.DB_NAME}"
+          "ansible-pull --accept-host-key -U git@github.com:KeerthanaBhavirisetty/ansible-pull.git setup.yml -e DBUSER=${var.DB_USER} -e DBPASS=${var.DB_PASS} -e DBHOST=${var.DB_HOST} -e DBNAME=${var.DB_NAME}"
       ]
   }
    
