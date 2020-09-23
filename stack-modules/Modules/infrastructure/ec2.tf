@@ -21,7 +21,7 @@ resource "null_resource" "connect-to-ec2" {
         type            = "ssh"
         user            = "centos"
         private_key     = file("/opt/devops.pem")
-        host            = element(aws_instance.nodes.*.private_ip, count.index)  
+        host            = element(aws_instance.nodes.*.public_ip, count.index)  
     }
 
     provisioner "file" {
