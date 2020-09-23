@@ -35,5 +35,9 @@ module "infra" {
   PUBLIC_SUBNETS        = module.network.public-subnets
   VPC_ID                = module.network.studentapp_vpcid
   DEFAULT_VPC_CIDR      = module.network.default_vpc_cidr
+  DB_USER               =  var.DB_USER
+  DB_NAME               =  var.DB_NAME
+  DB_PASS               =  var.DB_PASS
+  DB_HOST               = module.database.rds_endpoint
 
 }
