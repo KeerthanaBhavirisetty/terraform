@@ -13,3 +13,27 @@ resource "aws_instance" "web" {
         ENVIRONMENT             = var.PROJECT_ENV
     }
 }
+
+resource "null_resource" "connect-to-ec2" {
+
+    connection {
+        type     = "ssh"
+        user     = "centos"
+        private_key = file("/opt/devops.pem")
+        host     = element(aws_instance.web.*.public_ip, 0)  
+    }
+
+    provisioner "file" {
+        source      = "/opt/gitconnect.pem"
+        destination = "/home/centos/.ssh/id_rsa"
+    }
+
+    provisioner "remote-exec" {
+      inline = [
+          "sudo yum install git ansible -y",     
+          "sudo chmod 600 /home/centos/.ssh/id_rsa",
+          "ansible-pull --accept-host-key -U git@github.com:KeerthanaBhavirisetty/ansible-pull.git setup.yml"
+      ]
+  }
+   
+}
