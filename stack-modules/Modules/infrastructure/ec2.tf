@@ -1,4 +1,4 @@
-resource "aws_instance" "web" {
+resource "aws_instance" "nodes" {
     count                       = var.INSTANCE_COUNT
     ami                         = data.aws_ami.myami.id
     instance_type               = var.INSTANCE_TYPE
@@ -17,15 +17,15 @@ resource "aws_instance" "web" {
 resource "null_resource" "connect-to-ec2" {
 
     connection {
-        type     = "ssh"
-        user     = "centos"
-        private_key = file("/opt/devops.pem")
-        host     = element(aws_instance.web.*.public_ip, 0)  
+        type            = "ssh"
+        user            = "centos"
+        private_key     = file("/opt/devops.pem")
+        host            = element(aws_instance.nodes.private_ip, 0)  
     }
 
     provisioner "file" {
-        source      = "/opt/gitconnect.pem"
-        destination = "/home/centos/.ssh/id_rsa"
+        source          = "/opt/gitconnect.pem"
+        destination     = "/home/centos/.ssh/id_rsa"
     }
 
     provisioner "remote-exec" {
