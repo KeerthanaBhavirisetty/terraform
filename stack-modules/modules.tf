@@ -39,5 +39,6 @@ module "infra" {
   DB_NAME               =  var.DB_NAME
   DB_PASS               =  var.DB_PASS
   DB_HOST               = module.database.rds_endpoint
+  AZ                    = var.AZ
 
 }
