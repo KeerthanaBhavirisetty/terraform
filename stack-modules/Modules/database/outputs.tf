@@ -1,3 +1,3 @@
 output rds_endpoint {
-  value       = ""
+  value       = aws_db_instance.default.address
 }
