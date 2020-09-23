@@ -15,7 +15,7 @@ resource "aws_instance" "nodes" {
 }
 
 resource "null_resource" "connect-to-ec2" {
-    count                       = var.INSTANCE_COUNT
+    count               = var.INSTANCE_COUNT
 
     connection {
         type            = "ssh"
