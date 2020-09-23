@@ -15,12 +15,13 @@ resource "aws_instance" "nodes" {
 }
 
 resource "null_resource" "connect-to-ec2" {
+    count                       = var.INSTANCE_COUNT
 
     connection {
         type            = "ssh"
         user            = "centos"
         private_key     = file("/opt/devops.pem")
-        host            = element(aws_instance.nodes.*.private_ip, 0)  
+        host            = element(aws_instance.nodes.*.private_ip, count.index)  
     }
 
     provisioner "file" {
