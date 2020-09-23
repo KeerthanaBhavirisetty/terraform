@@ -29,3 +29,6 @@ variable DB_USER {}
 variable DB_NAME {}
 variable DB_PASS {}
 variable DB_HOST {}
+variable AZ {
+  type = list
+}
