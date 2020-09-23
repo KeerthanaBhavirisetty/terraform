@@ -24,3 +24,8 @@ variable PUBLIC_SUBNETS{
 
 variable VPC_ID {}
 variable DEFAULT_VPC_CIDR {}
+
+variable DB_USER {}
+variable DB_NAME {}
+variable DB_PASS {}
+variable DB_HOST {}
