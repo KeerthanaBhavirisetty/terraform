@@ -75,3 +75,11 @@ resource "aws_route_table_association" "private-a" {
   subnet_id      = element(aws_subnet.private-subnets.*.id,count.index)
   route_table_id = aws_route_table.private-rt.id
 }
+
+# you can give route table value or derive it from data rtb-8e7fbef0
+resource "aws_route" "r" {
+  count = 1
+  route_table_id            = "${data.aws_route_table.selected.id}"
+  destination_cidr_block    = "${var.VPC_CIDR}"
+  vpc_peering_connection_id = "${aws_vpc_peering_connection.peer-with-default.id}"
+}
