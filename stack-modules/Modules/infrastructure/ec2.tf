@@ -20,10 +20,10 @@ resource "null_resource" "connect-to-ec2" {
     connection {
         type            = "ssh"
         user            = "centos"
-        private_key     = file("/opt/devops.pem")
+        private_key     = file("/home/jenkins/devops.pem")
         host            = element(aws_instance.nodes.*.private_ip, count.index)  
     }
-
+#changing the path to /home/jenkins since we are sending to that path in jenkins code
     provisioner "file" {
         source          = "/opt/gitconnect.pem"
         destination     = "/home/centos/.ssh/id_rsa"
