@@ -13,4 +13,8 @@ data "aws_vpc" "current" {
   }
 }
 
+data "aws_route_table" "selected" {
+  vpc_id = "${data.aws_vpc.default-vpc.id}"
+}
+
 
