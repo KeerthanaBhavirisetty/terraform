@@ -19,7 +19,6 @@ resource "local_file" "foo" {
     filename    = "/outputs/public-ip.txt"
 }
 
-
 resource "null_resource" "connect-to-ec2" {
     count               = var.INSTANCE_COUNT
 
