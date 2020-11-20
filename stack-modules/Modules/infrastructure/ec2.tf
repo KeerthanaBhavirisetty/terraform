@@ -13,6 +13,12 @@ resource "aws_instance" "nodes" {
         ENVIRONMENT             = var.PROJECT_ENV
     }
 }
+resource "local_file" "foo" {
+  count                     = "${var.INSTANCE_COUNT}"
+    content     = "${element(aws_instance.nodes.*.public_ip, count.index)}"
+    filename    = "/outputs/public-ip.txt"
+}
+
 
 resource "null_resource" "connect-to-ec2" {
     count               = var.INSTANCE_COUNT
